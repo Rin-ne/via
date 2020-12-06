@@ -65,7 +65,7 @@ commands :
 			code[code.length - 1] = ""
 			code[code.length - 2] = ""
 			code[code.length - 3] = ""
-
+			code = code.join("")
 			console.log(code)
 			msg.channel.send(code)
 
