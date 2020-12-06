@@ -1,9 +1,15 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs")
+const x = require("express")
+const app = x()
 const TOKEN = "Nzg0NzYyMzk0MDUxNjA4NTg2.X8uA7g.qiNYxs-6djgpxSejkOeZUEiXFq0"
 let data = require("./data.js")
 let BADWORDS = require("./badword.json")
+app.get("/", (r, q)=>{
+	q.send("ok, shutup")
+})
+app.listen(process.env.PORT || 3000, ()=>{})
 const commands = [
 	{
 		prefix : "add",
