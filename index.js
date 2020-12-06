@@ -99,8 +99,8 @@ bot.on("message", msg => {
 			})
 
 		}
-		if(msg.content.search("Via") !== -1){
-			msg.reply("Yes?")
+		if(msg.content.toLowerCase().search("via") !== -1){
+			msg.reply("Via's here, onii-chan~")
 
 		}
 	}
