@@ -42,10 +42,10 @@ const commands = [
 		prefix : "help", 
 		action : (msg)=>{
 			msg.channel.send(`
-				Umm, hello, im via.
-				commands :
-				\`~vi add badword (badword)\`
-				\`~vi exec (code)\`
+Umm, hello, im via.
+commands :
+	\`~vi add badword (badword)\`
+	\`~vi exec (code)\`
 				`)
 		}
 	},
