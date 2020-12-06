@@ -100,6 +100,9 @@ bot.on("message", msg => {
 
 		}
 		if(msg.content.toLowerCase().search("via") !== -1){
+			if(msg.author.bot){
+				return 0
+			}
 			msg.reply("Via's here, onii-chan~")
 
 		}
