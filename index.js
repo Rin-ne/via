@@ -56,21 +56,18 @@ commands :
 			m[0] = ""
 			m[1] = ""
 			m = m.join(" ")
-			if(m.split("")[1] === "`"){
-				const code = m.split("```").join("")
-				console.log(code)
-				msg.channel.send(code)
-			}else{
-				let code = m
-				code = code.split("")[1] === "`"? code.split("```").join("") : (()=>{
-					let k = code.split("")
-					k[0] = ""
-					k[k.length - 1] = ""
-					return k.join("")
-				})()
-				console.log(code)
-				msg.channel.send(code)
-			}
+			
+			let code = m
+			code = code.split("")
+			code[0] = ""
+			code[1] = ""
+			code[2] = ""
+			code[code.length - 1] = ""
+			code[code.length - 2] = ""
+			code[code.length - 3] = ""
+
+			console.log(code)
+			msg.channel.send(code)
 
 		}
 	}
