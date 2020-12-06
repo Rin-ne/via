@@ -41,6 +41,28 @@ const commands = [
 	{
 		prefix : "help", 
 		action : (msg)=>{
+			msg.channel.send(`
+				Umm, hello, im via.
+				commands :
+				\`~vi add badword (badword)\`
+				\`~vi exec (code)\`
+				`)
+		}
+	},
+	{
+		prefix : "exec",
+		action : (msg)=>{
+			let m = msg.content.split(" ")
+			m[0] = ""
+			m[1] = ""
+			m = m.join(" ")
+			if(m.split("")[1] === "`"){
+				const code = m.split("```").join("")
+				console.log(code)
+				msg.channel.send(code)
+			}else{
+
+			}
 
 		}
 	}
