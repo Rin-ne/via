@@ -61,7 +61,9 @@ commands :
 				console.log(code)
 				msg.channel.send(code)
 			}else{
-
+				const code = m
+				console.log(code)
+				msg.channel.send(code)
 			}
 
 		}
