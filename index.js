@@ -63,7 +63,9 @@ bot.on("message", msg => {
 		}	
 	})
 	if(isOffense){
-		msg.delete({reason:"Swear word detected!"})
+		setTimeout(()=>{
+			msg.delete({reason:"Swear word detected!"})
+		}, 100)
 	}
 	else{
 		if(msg.content.startsWith("~vi")){
