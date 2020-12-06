@@ -62,6 +62,8 @@ commands :
 			code[0] = ""
 			code[1] = ""
 			code[2] = ""
+			code[3] = ""
+			code[4] = ""
 			code[code.length - 1] = ""
 			code[code.length - 2] = ""
 			code[code.length - 3] = ""
