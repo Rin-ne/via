@@ -62,6 +62,12 @@ commands :
 				msg.channel.send(code)
 			}else{
 				const code = m
+				code = code.split("")[1] === "`"? code.split("```").join("") : (()=>{
+					let k = code.split("")
+					k[0] = ""
+					k[k.length - 1] = ""
+					return k.join("")
+				})()
 				console.log(code)
 				msg.channel.send(code)
 			}
