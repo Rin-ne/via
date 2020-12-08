@@ -1,0 +1,13 @@
+{
+  "files": ["src/*.ts", "src/**/*.ts"],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "target": "es5",
+    "moduleResolution": "node" ,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ]
+  }
+}

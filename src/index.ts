@@ -3,9 +3,10 @@ const bot = new Discord.Client();
 const fs = require("fs")
 const x = require("express")
 const app = x()
-const TOKEN = process.env.token || require("./token.json").token
-let data = require("./data.js")
-let BADWORDS = require("./badword.json")
+const vm = require("vm")
+const TOKEN = process.env.token || require("../token.json").token
+let data = require("./data")
+let BADWORDS = require("../badword.json")
 app.get("/", (r, q)=>{
 	q.send("ok, shutup")
 })
@@ -69,8 +70,12 @@ commands :
 			code[code.length - 3] = ""
 			code = code.join("")
 			console.log(code)
-			msg.channel.send(code)
+			const context = {
+				bot : bot
 
+			}
+			vm.createContext(context)
+			vm.runInContext(code, context)
 		}
 	}
 ]
@@ -106,7 +111,7 @@ bot.on("message", msg => {
 			})
 
 		}
-		if(msg.content.toLowerCase().search("via") !== -1){
+		if(msg.content.toLowerCase().startsWith("via") || msg.content.toLowerCase().endsWith("via") ){
 			if(msg.author.bot){
 				return 0
 			}
